@@ -55,24 +55,26 @@ class App extends Component {
   };
 
   calculate = () => {
+    //setstatenya gajalan, harus re render dulu. jd mending lgsg pake input.
     this.setState({currNum : this.state.input});
     if(this.state.operator === "sum"){
       this.setState({
-        input: parseInt(this.state.prevNum) + parseInt(this.state.currNum)
+        input: parseInt(this.state.prevNum) + parseInt(this.state.input)
       });
     } else if (this.state.operator === "min"){
       this.setState({
-        input: parseInt(this.state.prevNum) - parseInt(this.state.currNum)
+        input: parseInt(this.state.prevNum) - parseInt(this.state.input)
       });
     } else if (this.state.operator === "multiply"){
       this.setState({
-        input: parseInt(this.state.prevNum) * parseInt(this.state.currNum)
+        input: parseInt(this.state.prevNum) * parseInt(this.state.input)
       });
     } else if (this.state.operator === "divide"){
       this.setState({
-        input: parseInt(this.state.prevNum) / parseInt(this.state.currNum)
+        input: parseInt(this.state.prevNum) / parseInt(this.state.input)
       });
     }
+
   }
 
   render() {
